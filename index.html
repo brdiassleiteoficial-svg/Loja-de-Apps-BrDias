@@ -708,7 +708,7 @@ function renderizarApps(lista) {
       : "A definir";
 
     const conteudoArte = app.imagem
-      ? `<img src="${app.imagem}" alt="${app.nome}">`
+      ? `<img src="${app.imagem}" alt="${app.nome}" onerror="this.outerHTML='${app.icone}'">`
       : app.icone;
 
     area.innerHTML += `
