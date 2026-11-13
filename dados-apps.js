@@ -7,7 +7,7 @@ const listaDeAplicativos = [
     desc: "Sistema de agendamento de serviços para profissionais da beleza.",
     preco: 0,
     icone: "💅",
-    imagem: "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=600&q=80",
+    imagem: "https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=600&q=80",
     arte: "bella"
   },
   {
