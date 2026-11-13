@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -53,7 +52,6 @@ button, input {
 }
 
 /* CABEÇALHO */
-
 header {
   background: rgba(7,20,38,.96);
   border-bottom: 1px solid var(--borda);
@@ -126,7 +124,6 @@ nav a:hover {
 }
 
 /* DESTAQUE */
-
 .hero {
   padding: 95px 0;
   background:
@@ -197,7 +194,6 @@ nav a:hover {
 }
 
 /* BENEFÍCIOS */
-
 .beneficios {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -228,7 +224,6 @@ nav a:hover {
 }
 
 /* SEÇÕES */
-
 .secao {
   padding: 65px 0;
 }
@@ -255,7 +250,6 @@ nav a:hover {
 }
 
 /* BUSCA */
-
 .busca {
   margin-bottom: 25px;
 }
@@ -277,7 +271,6 @@ nav a:hover {
 }
 
 /* APLICATIVOS */
-
 .grade-apps {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -298,12 +291,24 @@ nav a:hover {
 }
 
 .app-arte {
-  min-height: 165px;
+  height: 175px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 65px;
   background: linear-gradient(135deg, #0b3157, #087fe8);
+  overflow: hidden;
+}
+
+.app-arte img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .3s ease;
+}
+
+.app-card:hover .app-arte img {
+  transform: scale(1.05);
 }
 
 .art-bella {
@@ -374,7 +379,6 @@ nav a:hover {
 }
 
 /* SOBRE */
-
 .sobre-caixa {
   background: linear-gradient(135deg, #10243b, #0b3157);
   border: 1px solid var(--borda);
@@ -394,7 +398,6 @@ nav a:hover {
 }
 
 /* RODAPÉ */
-
 footer {
   background: #050e1b;
   border-top: 1px solid var(--borda);
@@ -431,7 +434,6 @@ footer p {
 }
 
 /* MODAL */
-
 .modal {
   display: none;
   position: fixed;
@@ -469,13 +471,19 @@ footer p {
   margin-bottom: 12px;
 }
 
+.modal-icone img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
 .modal-conteudo p {
   color: var(--cinza);
   margin: 12px 0 20px;
 }
 
 /* CELULAR */
-
 @media (max-width: 850px) {
   nav {
     display: none;
@@ -548,7 +556,6 @@ footer p {
 
 <header>
   <div class="container topo">
-
     <a href="index.html" class="logo">
       BrDiass<span>Apps</span>
     </a>
@@ -565,38 +572,30 @@ footer p {
         🛒 Carrinho <span id="contadorCarrinho">0</span>
       </a>
     </nav>
-
   </div>
 </header>
 
 <main>
-
   <section class="hero">
     <div class="container">
       <div class="hero-conteudo">
-
         <span class="etiqueta">TECNOLOGIA E SOLUÇÕES DIGITAIS</span>
-
         <h1>
           Aplicativos que <span>facilitam</span> sua vida.
         </h1>
-
         <p>
           Conheça os aplicativos BrDiass Apps. Soluções digitais
           desenvolvidas para ajudar você no dia a dia, nos negócios
           e no entretenimento.
         </p>
-
         <a href="aplicativos.html" class="botao">Explorar aplicativos</a>
         <a href="sobre.html" class="botao-secundario">Conheça a loja</a>
-
       </div>
     </div>
   </section>
 
   <section class="container">
     <div class="beneficios">
-
       <div class="beneficio">
         <div class="icone">📱</div>
         <h3>Soluções digitais</h3>
@@ -614,12 +613,10 @@ footer p {
         <h3>Compra segura</h3>
         <p>Estamos preparando uma experiência de compra segura.</p>
       </div>
-
     </div>
   </section>
 
   <section class="secao container" id="destaques">
-
     <div class="titulo-secao">
       <small>NOSSOS PRODUTOS</small>
       <h2>Aplicativos em destaque</h2>
@@ -644,30 +641,23 @@ footer p {
     <div style="text-align:center; margin-top:35px;">
       <a href="aplicativos.html" class="botao">Ver todos os aplicativos</a>
     </div>
-
   </section>
 
   <section class="secao container">
     <div class="sobre-caixa">
-
       <h2>Bem-vindo à BrDiass Apps!</h2>
-
       <p>
         Nossa loja reúne aplicativos e ferramentas digitais
         desenvolvidos para oferecer praticidade, organização
         e novas possibilidades para nossos clientes.
       </p>
-
       <a href="sobre.html" class="botao">Saiba mais sobre nós</a>
-
     </div>
   </section>
-
 </main>
 
 <footer>
   <div class="container rodape-conteudo">
-
     <div>
       <a href="index.html" class="logo">BrDiass<span>Apps</span></a>
       <p>Aplicativos e soluções digitais.</p>
@@ -681,88 +671,32 @@ footer p {
       <a href="contato.html">Contato</a>
       <a href="minha-conta.html">Minha conta</a>
     </div>
-
   </div>
 </footer>
 
 <!-- JANELA DE DETALHES DO APLICATIVO -->
-
 <div class="modal" id="modalApp" onclick="fecharModalFora(event)">
   <div class="modal-conteudo">
-
     <button class="fechar" onclick="fecharModal()">×</button>
-
     <div class="modal-icone" id="modalIcone">📱</div>
     <h2 id="modalNome">Aplicativo</h2>
     <p id="modalDescricao"></p>
-
     <a href="aplicativos.html" class="botao">Ver aplicativo</a>
-
   </div>
 </div>
 
+<!-- IMPORTA A LISTA DE APPS COM AS IMAGENS -->
+<script src="dados-apps.js"></script>
+
 <script>
 /* MENU MOBILE */
-
 function abrirMenu() {
   document.getElementById("menu").classList.toggle("aberto");
 }
 
-/* PRODUTOS DEMONSTRATIVOS */
-
-const aplicativos = [
-  {
-    id: 1,
-    nome: "BellaPés & Mãos",
-    categoria: "Negócios",
-    descricao: "Sistema de agendamento de serviços para profissionais da beleza.",
-    preco: 0,
-    icone: "💅",
-    arte: "art-bella"
-  },
-  {
-    id: 2,
-    nome: "GPS Brasil",
-    categoria: "Utilidades",
-    descricao: "Solução digital para navegação e localização.",
-    preco: 0,
-    icone: "📍",
-    arte: "art-gps"
-  },
-  {
-    id: 3,
-    nome: "BrDiass Agenda",
-    categoria: "Negócios",
-    descricao: "Organize compromissos e gerencie sua rotina profissional.",
-    preco: 0,
-    icone: "📅",
-    arte: "art-default"
-  },
-  {
-    id: 4,
-    nome: "BrDiass Player",
-    categoria: "Entretenimento",
-    descricao: "Uma experiência digital para entretenimento e mídia.",
-    preco: 0,
-    icone: "▶️",
-    arte: "art-default"
-  },
-  {
-    id: 5,
-    nome: "BrDiass Tools",
-    categoria: "Utilidades",
-    descricao: "Ferramentas digitais para facilitar tarefas do cotidiano.",
-    preco: 0,
-    icone: "⚙️",
-    arte: "art-gps"
-  }
-];
-
 /* EXIBIR APLICATIVOS */
-
 function renderizarApps(lista) {
   const area = document.getElementById("listaApps");
-
   area.innerHTML = "";
 
   lista.slice(0, 3).forEach(app => {
@@ -773,33 +707,28 @@ function renderizarApps(lista) {
         })
       : "A definir";
 
+    const conteudoArte = app.imagem
+      ? `<img src="${app.imagem}" alt="${app.nome}">`
+      : app.icone;
+
     area.innerHTML += `
       <div class="app-card">
-
-        <div class="app-arte ${app.arte}">
-          ${app.icone}
+        <div class="app-arte ${app.arte ? 'art-' + app.arte : 'art-default'}">
+          ${conteudoArte}
         </div>
 
         <div class="app-info">
-
           <span class="categoria">${app.categoria}</span>
-
           <h3>${app.nome}</h3>
-
-          <p>${app.descricao}</p>
+          <p>${app.desc}</p>
 
           <div class="app-rodape">
-
             <span class="preco">${preco}</span>
-
             <button onclick="abrirDetalhes(${app.id})">
               Ver detalhes
             </button>
-
           </div>
-
         </div>
-
       </div>
     `;
   });
@@ -809,30 +738,33 @@ function renderizarApps(lista) {
 }
 
 /* PESQUISA */
-
 function pesquisarApps() {
   const termo = document.getElementById("campoBusca")
     .value.toLowerCase();
 
-  const encontrados = aplicativos.filter(app =>
+  const encontrados = listaDeAplicativos.filter(app =>
     app.nome.toLowerCase().includes(termo) ||
     app.categoria.toLowerCase().includes(termo) ||
-    app.descricao.toLowerCase().includes(termo)
+    app.desc.toLowerCase().includes(termo)
   );
 
   renderizarApps(encontrados);
 }
 
 /* DETALHES */
-
 function abrirDetalhes(id) {
-  const app = aplicativos.find(item => item.id === id);
-
+  const app = listaDeAplicativos.find(item => item.id === id);
   if (!app) return;
 
-  document.getElementById("modalIcone").textContent = app.icone;
+  const modalIcone = document.getElementById("modalIcone");
+  if (app.imagem) {
+    modalIcone.innerHTML = `<img src="${app.imagem}" alt="${app.nome}">`;
+  } else {
+    modalIcone.textContent = app.icone;
+  }
+
   document.getElementById("modalNome").textContent = app.nome;
-  document.getElementById("modalDescricao").textContent = app.descricao;
+  document.getElementById("modalDescricao").textContent = app.desc;
 
   document.getElementById("modalApp").style.display = "flex";
 }
@@ -848,7 +780,6 @@ function fecharModalFora(event) {
 }
 
 /* CARRINHO */
-
 function obterCarrinho() {
   try {
     return JSON.parse(localStorage.getItem("brdiass_carrinho")) || [];
@@ -859,23 +790,19 @@ function obterCarrinho() {
 
 function atualizarContador() {
   const carrinho = obterCarrinho();
-
   const quantidade = carrinho.reduce(
     (total, item) => total + Number(item.qtd || 0),
     0
   );
-
   document.getElementById("contadorCarrinho").textContent = quantidade;
 }
 
 /* INICIALIZAÇÃO DA PÁGINA */
-
-renderizarApps(aplicativos);
+renderizarApps(listaDeAplicativos);
 atualizarContador();
 </script>
 
 <!-- FIREBASE - BRDIASS APPS -->
-
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-analytics.js";
@@ -893,34 +820,19 @@ const firebaseConfig = {
   measurementId: "G-D33YSY79WR"
 };
 
-// Inicializar projeto
 const app = initializeApp(firebaseConfig);
-
-// Serviços Firebase
 const auth = getAuth(app);
 const db = getFirestore(app);
 const storage = getStorage(app);
 
-// Analytics
 let analytics = null;
-
 try {
   analytics = getAnalytics(app);
 } catch (erro) {
   console.log("Analytics não disponível.");
 }
 
-// Disponibilizar serviços para futuras integrações
-window.firebaseServices = {
-  app,
-  auth,
-  db,
-  storage,
-  analytics
-};
-
-console.log("Firebase conectado!");
-console.log("Projeto:", app.options.projectId);
+window.firebaseServices = { app, auth, db, storage, analytics };
 </script>
 
 </body>
