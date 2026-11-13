@@ -147,7 +147,7 @@ function renderizar(){
   
   document.getElementById("products").innerHTML=lista.length?lista.map(a=>{
     const visual = a.imagem 
-      ? `<img src="${a.imagem}" alt="${a.nome}">` 
+      ? `<img src="${a.imagem}" alt="${a.nome}" onerror="this.outerHTML='<div class=\\'appicon\\'>${a.icone}</div>'">` 
       : `<div class="appicon">${a.icone}</div>`;
       
     return `
